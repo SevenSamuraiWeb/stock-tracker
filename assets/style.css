@@ -1,49 +1,239 @@
-/* Main background and text color */
-.stApp {
-    background-color: #0e1117;
-    color: #fafafa;
+/* Dark theme for Shiny Dashboard */
+body {
+    background-color: #0e1117 !important;
+    color: #fafafa !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Main header styling */
+.main-header {
+    background-color: #1f2937 !important;
+    border-bottom: 1px solid #374151 !important;
+}
+
+.main-header .navbar {
+    background-color: #1f2937 !important;
+}
+
+.main-header .logo {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border-right: 1px solid #374151 !important;
 }
 
 /* Sidebar styling */
-[data-testid="stSidebar"] {
-    background-color: #262730;
+.main-sidebar {
+    background-color: #262730 !important;
+    border-right: 1px solid #374151 !important;
 }
 
-/* Card-like styling for metrics */
-div[data-testid="metric-container"] {
-    background-color: #1f2937;
-    border: 1px solid #374151;
-    padding: 15px;
-    border-radius: 10px;
-    color: white;
+.sidebar-menu > li > a {
+    color: #fafafa !important;
+    border-left: 3px solid transparent !important;
+}
+
+.sidebar-menu > li.active > a {
+    background-color: #1f2937 !important;
+    border-left-color: #60a5fa !important;
+    color: #ffffff !important;
+}
+
+.sidebar-menu > li:hover > a {
+    background-color: #1f2937 !important;
+    color: #60a5fa !important;
+}
+
+/* Content area */
+.content-wrapper {
+    background-color: #0e1117 !important;
+    color: #fafafa !important;
+}
+
+.content {
+    padding: 15px !important;
+}
+
+/* Box styling */
+.box {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    border-radius: 8px !important;
+    color: #fafafa !important;
+}
+
+.box-header {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #374151 !important;
+}
+
+.box-header h3 {
+    color: #ffffff !important;
+    margin: 0 !important;
+}
+
+.box-body {
+    background-color: #1f2937 !important;
+    color: #fafafa !important;
+}
+
+/* Value boxes */
+.small-box {
+    border-radius: 8px !important;
+    border: 1px solid #374151 !important;
+}
+
+.small-box h3, .small-box p {
+    color: #ffffff !important;
+}
+
+.small-box .icon {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Form controls */
+.form-control {
+    background-color: #374151 !important;
+    color: #fafafa !important;
+    border: 1px solid #4b5563 !important;
+    border-radius: 6px !important;
+}
+
+.form-control:focus {
+    background-color: #374151 !important;
+    color: #fafafa !important;
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25) !important;
+}
+
+.selectize-input {
+    background-color: #374151 !important;
+    color: #fafafa !important;
+    border: 1px solid #4b5563 !important;
+}
+
+.selectize-dropdown {
+    background-color: #374151 !important;
+    color: #fafafa !important;
+    border: 1px solid #4b5563 !important;
+}
+
+.selectize-dropdown-content .option {
+    color: #fafafa !important;
+}
+
+.selectize-dropdown-content .option.active {
+    background-color: #60a5fa !important;
+    color: #ffffff !important;
+}
+
+/* Labels */
+label {
+    color: #fafafa !important;
+    font-weight: 500 !important;
+}
+
+/* Radio buttons */
+.radio label {
+    color: #fafafa !important;
+}
+
+.radio input[type="radio"]:checked + label::before {
+    border-color: #60a5fa !important;
+    background-color: #60a5fa !important;
 }
 
 /* Custom headers */
-h1, h2, h3 {
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 /* News card styling */
 .news-card {
-    background-color: #1f2937;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #374151;
+    background-color: #1f2937 !important;
+    padding: 15px !important;
+    border-radius: 10px !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #374151 !important;
 }
 
 .news-card h4 {
-    margin-top: 0;
-    color: #60a5fa;
+    margin-top: 0 !important;
+    color: #60a5fa !important;
 }
 
 .news-card a {
-    text-decoration: none;
-    color: #60a5fa;
+    text-decoration: none !important;
+    color: #60a5fa !important;
+}
+
+.news-card a:hover {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
 }
 
 .news-card .date {
-    font-size: 0.8em;
-    color: #9ca3af;
+    font-size: 0.8em !important;
+    color: #9ca3af !important;
+    margin: 5px 0 !important;
+}
+
+.news-card p {
+    color: #fafafa !important;
+    margin-bottom: 0 !important;
+}
+
+/* Loading spinners */
+.shiny-spinner-output-container {
+    background-color: #1f2937 !important;
+}
+
+/* Tables */
+.dataTables_wrapper {
+    color: #fafafa !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    background-color: #374151 !important;
+    color: #fafafa !important;
+    border: 1px solid #4b5563 !important;
+}
+
+/* Progress bars */
+.progress {
+    background-color: #374151 !important;
+}
+
+.progress-bar {
+    background-color: #60a5fa !important;
+}
+
+/* Plotly charts dark theme support */
+.plotly .modebar {
+    background-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+.plotly .modebar-btn {
+    color: #fafafa !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #374151;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa;
 }
