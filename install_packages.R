@@ -1,21 +1,37 @@
-# Install Required R Packages for Stock Dashboard
-# Run this script before running the Shiny application
+# Package Installation Script for Professional Stock Tracker
+# This script installs all required R packages
 
-# List of required packages
-required_packages <- c(
+cat("===================================\n")
+cat("Professional Stock Tracker Setup\n")
+cat("===================================\n\n")
+
+# List of required packages organized by category
+core_packages <- c(
   "shiny",
   "shinydashboard", 
   "DT",
+  "plotly",
+  "shinycssloaders"
+)
+
+data_packages <- c(
   "dplyr",
   "readr", 
-  "lubridate",
   "tidyr",
-  "plotly",
-  "ggplot2",
+  "lubridate"
+)
+
+professional_packages <- c(
+  "futile.logger",
+  "testthat",
+  "digest",
+  "config"
+)
+
+optional_packages <- c(
   "httr",
   "jsonlite",
-  "rvest",
-  "shinycssloaders",
+  "ggplot2",
   "htmltools",
   "htmlwidgets",
   "shinyWidgets"

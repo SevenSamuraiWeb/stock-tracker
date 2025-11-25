@@ -1,5 +1,6 @@
 # NIFTY 50 Stock Dashboard in R
-# Main Shiny Application
+# Professional Shiny Application with Enhanced Features
+# Version 2.0.0
 
 # Load required libraries
 library(shiny)
@@ -11,25 +12,66 @@ library(readr)
 library(lubridate)
 library(shinycssloaders)
 library(htmltools)
+library(futile.logger)
 
-# Source utility functions
+# Load configuration and utilities
+source("config.R")
+source("logger.R")
+source("validation.R")
 source("utils.R")
 source("charts.R")
 source("news.R")
 
-# Load data
-data_list <- load_data("NIFTY50_all.csv", "stock_metadata.csv")
-df <- data_list$merged_df
+# Initialize logging
+init_logging()
+log_startup()
+
+# Load and validate data
+start_time <- Sys.time()
+log_data_load("Starting data load process")
+
+data_list <- load_data(DATA_CONFIG$nifty_file, DATA_CONFIG$metadata_file)
+if (is.null(data_list)) {
+  log_error("Failed to load data files")
+  stop("Could not load required data files. Please check file paths and format.")
+}
+
+df_raw <- data_list$merged_df
 metadata <- data_list$metadata
+
+# Validate data quality
+validation_result <- validate_stock_data(df_raw)
+if (!validation_result$valid) {
+  log_error("Data validation failed", paste("Issues:", length(validation_result$issues)))
+  # Use raw data but log warnings
+  df <- df_raw
+} else {
+  df <- validation_result$data
+}
+
+# Validate metadata
+metadata_validation <- validate_metadata(metadata)
+if (!metadata_validation$valid) {
+  log_error("Metadata validation issues", paste(names(metadata_validation$issues), collapse = ", "))
+}
+
+load_duration <- as.numeric(Sys.time() - start_time)
+log_performance("Data loading and validation", load_duration, 
+               paste("Rows:", nrow(df), "| Symbols:", length(unique(df$Symbol))))
 
 # Define UI
 ui <- dashboardPage(
-  dashboardHeader(title = "📈 NIFTY 50 Dashboard"),
+  dashboardHeader(
+    title = paste("📈", APP_CONFIG$name, "v", APP_CONFIG$version),
+    titleWidth = 350
+  ),
   
   dashboardSidebar(
     width = 300,
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-line")),
+      menuItem("Data Quality", tabName = "quality", icon = icon("check-circle")),
+      menuItem("About", tabName = "about", icon = icon("info-circle")),
       hr(),
       h4("🔍 Filter Options", style = "color: white; margin-left: 15px;"),
       
