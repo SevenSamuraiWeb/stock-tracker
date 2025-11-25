@@ -1,22 +1,40 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.env
-.venv
-pip-log.txt
-pip-delete-this-directory.txt
+# R and Shiny specific files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
 
-# Streamlit
-.streamlit/
+# Shiny application logs
+rsconnect/
 
-# VS Code
-.vscode/
+# R packages
+packrat/lib*/
+renv/
 
-# OS generated files
+# R session data
+.httr-oauth
+
+# R temporary files
+*~
+*.swp
+*.swo
+
+# OS specific files
 .DS_Store
 Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# API keys (if stored in files)
+config.R
+secrets.R
+
+# Log files
+*.log
+
+# Temporary data files
+temp/
+tmp/
