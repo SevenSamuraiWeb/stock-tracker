@@ -122,7 +122,7 @@ install.packages(c("httr", "jsonlite", "lubridate"))
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/JosephJonathanFernandes/stock-tracker.git
+   git clone https://github.com/SevenSamuraiWeb/stock-tracker.git
    cd stock-tracker
    ```
 
@@ -306,4 +306,4 @@ This R Shiny version replaces the original Python Streamlit application with:
 
 ## Support
 
-For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/JosephJonathanFernandes/stock-tracker) or contact the maintainers.
+For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/SevenSamuraiWeb/stock-tracker) or contact the maintainers.

@@ -2,7 +2,7 @@
 
 Date: 2025-11-25
 
-Prepared by: Joseph Jonathan Fernandes, Nihaal Virgincar, Pratik Nayak, Rajivkumar Naik
+Prepared by: Pratik Nayak, Rajivkumar Naik, Areen Dessai, Nihaal Virgincar
 
 ---
 
